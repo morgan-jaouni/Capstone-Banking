@@ -1,4 +1,4 @@
-# Capstone-Banking
+# CashStash
 
 Banking app using Node.js, Express, Mongoose, MongoDB
 
