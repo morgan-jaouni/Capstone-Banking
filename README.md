@@ -21,4 +21,4 @@ Banking app using Node.js, Express, Mongoose, MongoDB
 
 
 
-![Screen Shot 2020-11-20 at 11 37 25 PM](https://user-images.githubusercontent.com/73499055/99868589-67fbc800-2b89-11eb-993f-aeca3df2ee0c.png)
+![Screen Shot 2020-11-20 at 11 38 56 PM](https://user-images.githubusercontent.com/73499055/99868607-9bd6ed80-2b89-11eb-8a67-c6c1ef68079f.png)
