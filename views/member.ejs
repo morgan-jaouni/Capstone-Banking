@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<header>
+			<h1>Current</h1>
+			<nav>
+				<ul>
+					<li>
+						<a href="/member/home">Home</a>
+					</li>
+					<li>
+						<a href="/member/transfer">Transfer</a>
+					</li>
+					<li>
+						<a href="/member/logout"type="button">Logout</a>
+					</li>
+				</ul>
+			</nav>
+        </header>
+		<h1>Profile Information</h1>
+		<h2>Available Balance: <%= userdata.money %> </h2>
+		<p>Name: <%= userdata.name %> </p>
+		<p>Username: <%= userdata.username %> </p>
+		<p>Email: <%= userdata.email %> </p>
+		<p>Creation Date: <%= userdata.create_date.toString() %> </p>
+
+		<button>Withdraw</button>
+		<input></input>
+		<button>Deposit</button>
+		<input></input>
+		
+	
+	</body>
+</html>

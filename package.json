@@ -4,8 +4,14 @@
   "description": "Banking app using Node.js, Express, Mongoose, MongoDB",
   "main": "server.js",
   "dependencies": {
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.5",
     "ejs": "^3.1.5",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "express-redirect": "^1.2.2",
+    "method-override": "^3.0.0",
+    "mongoose": "^5.10.19",
+    "morgan": "^1.10.0"
   },
   "devDependencies": {},
   "scripts": {
