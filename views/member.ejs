@@ -18,21 +18,29 @@
 					<li>
 						<a href="/member/logout"type="button">Logout</a>
 					</li>
+					<li>
+						<a href="/member/edit"type="button">Settings</a>
+					</li>
 				</ul>
 			</nav>
         </header>
 		<h1>Profile Information</h1>
-		<h2>Available Balance: <%= userdata.money %> </h2>
 		<p>Name: <%= userdata.name %> </p>
 		<p>Username: <%= userdata.username %> </p>
 		<p>Email: <%= userdata.email %> </p>
 		<p>Creation Date: <%= userdata.create_date.toString() %> </p>
-
-		<button>Withdraw</button>
-		<input></input>
-		<button>Deposit</button>
-		<input></input>
 		
-	
+		<div id="checkingBalance" class="balance">
+		<h2>Available Balance: <%= userdata.money %> </h2>
+		</div>
+		<form action='/member/<%= userdata._id %>/withdraw?_method=PUT' method='POST'>
+			<input id="checkingInput" name="withdraw" class="input" type="text" placeholder="enter an amount" />
+			<input id="checkingWithdraw" class="withdraw" type="submit" value="Withdraw" />
+		</form>
+		<form action='/member/<%= userdata._id %>/deposit?_method=PUT' method='POST'>
+			<input id="checkingInput" name="deposit" class="input" type="text" placeholder="enter an amount" />
+			<input id="checkingDeposit" class="deposit" type="submit" value="Deposit" />
+		</form>
+	  </div>
 	</body>
 </html>

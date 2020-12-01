@@ -12,8 +12,7 @@ router.get('/',(req, res, next) => {
     query.select('name username email money create_date');
     query.exec((err, user) => {
     if (err) return console.log(err);
-      userdata=user;
-      res.render('member', { userdata: user, title: 'member', action:'MAIN' });
+      res.render('member', { userdata: user});
     });
   } else {
     res.redirect('/login');
@@ -26,5 +25,51 @@ router.get('/logout', (req, res, next) => {
   res.redirect('/login');
 });
 
+
+
+					
+// PUT edit
+router.put('/:id/edit', (req, res) => {
+  User.findByIdAndUpdate(
+      req.params.id,
+      req.body,
+      { new: true },
+      (err, updatedUser) => {
+          if (err) return console.log(err);
+          res.redirect('/member');
+      }
+  );
+});
+
+
+
+
+//member withdraw
+router.put('/:id/withdraw', (req,res) => {
+
+  User.findOne({'_id' : req.params.id}, (err, foundUser)=>{
+    console.log(req.body)
+
+    const newBalance = foundUser.money - req.body.withdraw;
+    
+    User.findByIdAndUpdate({'_id' : req.params.id}, { $set: {money : newBalance}}, (err, foundUser)=>{
+      res.redirect('/member')
+    });
+  });
+});
+
+
+//member deposit
+router.put('/:id/deposit', (req,res) => {
+
+  User.findOne({'_id' : req.params.id}, (err, foundUser)=>{
+    console.log(req.body)
+    const newBalance = foundUser.money + parseInt(req.body.deposit);
+    
+    User.findByIdAndUpdate({'_id' : req.params.id}, { $set: {money : newBalance}}, (err, foundUser)=>{
+      res.redirect('/member')
+    });
+  });
+});
 
 module.exports = router;
