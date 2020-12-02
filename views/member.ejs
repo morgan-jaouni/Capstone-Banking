@@ -1,8 +1,16 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta charset="utf-8">
-		<title></title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="stylesheet" href="/styles/main.css">
+		<title>Current</title>
 	</head>
 	<body>
 		<header>
@@ -19,27 +27,25 @@
 						<a href="/member/logout"type="button">Logout</a>
 					</li>
 					<li>
-						<a href="/member/edit"type="button">Settings</a>
+						<a href="/member/edit"type="button">Account</a>
 					</li>
 				</ul>
 			</nav>
         </header>
-		<h1>Profile Information</h1>
-		<p>Name: <%= userdata.name %> </p>
-		<p>Username: <%= userdata.username %> </p>
-		<p>Email: <%= userdata.email %> </p>
-		<p>Creation Date: <%= userdata.create_date.toString() %> </p>
+		
+		<h3> <%= userdata.username %> </h3>
+		
 		
 		<div id="checkingBalance" class="balance">
 		<h2>Available Balance: <%= userdata.money %> </h2>
 		</div>
 		<form action='/member/<%= userdata._id %>/withdraw?_method=PUT' method='POST'>
-			<input id="checkingInput" name="withdraw" class="input" type="text" placeholder="enter an amount" />
-			<input id="checkingWithdraw" class="withdraw" type="submit" value="Withdraw" />
+			<input class="text-input" id="checkingInput" name="withdraw" class="input" type="text" placeholder="enter an amount" />
+			<input id="checkingWithdraw" class="text-input" type="submit" value="Withdraw" />
 		</form>
 		<form action='/member/<%= userdata._id %>/deposit?_method=PUT' method='POST'>
-			<input id="checkingInput" name="deposit" class="input" type="text" placeholder="enter an amount" />
-			<input id="checkingDeposit" class="deposit" type="submit" value="Deposit" />
+			<input class="text-input" id="checkingInput" name="deposit" class="input" type="text" placeholder="enter an amount" />
+			<input class="text-input" id="checkingDeposit" class="deposit" type="submit" value="Deposit" />
 		</form>
 	  </div>
 	</body>

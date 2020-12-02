@@ -12,6 +12,7 @@ router.get('/',(req, res, next) => {
     query.select('name username email money create_date');
     query.exec((err, user) => {
     if (err) return console.log(err);
+    
       res.render('member', { userdata: user});
     });
   } else {
@@ -30,25 +31,39 @@ router.get('/logout', (req, res, next) => {
 					
 // PUT edit
 router.put('/:id/edit', (req, res) => {
+
+  //query db
   User.findByIdAndUpdate(
       req.params.id,
       req.body,
       { new: true },
       (err, updatedUser) => {
           if (err) return console.log(err);
-          res.redirect('/member');
+          res.redirect('/member/edit');
       }
   );
 });
 
 
+//PUT User Delete 
+router.delete('/:id', (req,res) => {
+  
+  //query db
+  User.findByIdAndDelete(req.params.id, (err, deleteUser) => {
+    if (err) return console.log(err);
+
+    //redirect to users index
+    res.redirect('/register');
+
+  }); 
+});
 
 
 //member withdraw
 router.put('/:id/withdraw', (req,res) => {
 
+  //query db
   User.findOne({'_id' : req.params.id}, (err, foundUser)=>{
-    console.log(req.body)
 
     const newBalance = foundUser.money - req.body.withdraw;
     
@@ -62,8 +77,9 @@ router.put('/:id/withdraw', (req,res) => {
 //member deposit
 router.put('/:id/deposit', (req,res) => {
 
+  //query db
   User.findOne({'_id' : req.params.id}, (err, foundUser)=>{
-    console.log(req.body)
+
     const newBalance = foundUser.money + parseInt(req.body.deposit);
     
     User.findByIdAndUpdate({'_id' : req.params.id}, { $set: {money : newBalance}}, (err, foundUser)=>{

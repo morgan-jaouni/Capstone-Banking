@@ -1,0 +1,21 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  @font-face {
+    font-family: Clip;
+    src: url("https://acupoftee.github.io/fonts/Clip.ttf");
+  }
+
+  body {
+    background-color: black;
+    color: lime;
+  }
+
+  .text-input {
+      background-color: black;
+      color: lime;
+  }
+ 

@@ -1,8 +1,15 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta charset="utf-8">
-		<title></title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Main CSS -->
+	<link rel="stylesheet" href="/styles/main.css">
+		<title>Current</title>
 	</head>
 	<body>
 		<header>
@@ -21,29 +28,37 @@
 					</li>
 				</ul>
 			</nav>
-        </header>
+		</header>
+		
+		<h1>Profile Information</h1>
+		<p>Name: <%= userdata.name %> </p>
+		<p>Username: <%= userdata.username %> </p>
+		<p>Email: <%= userdata.email %> </p>
+
 		<h2>Edit Profile</h2>
 		<form action="/member/<%= userdata.id %>/edit?_method=PUT" method="POST">
-
 			<div>
-			  <label for="name">Name: </label>
-			  <input  id="name" name="name" type="text" value="<%= userdata.name %>"></input>
+				<label for="name">Name: </label>
+				<input  class="text-input" id="name" name="name" type="text" value="<%= userdata.name %>"></input>
 			</div>
-	  
+			
 			<div>
-			  <label for="userName">Username: </label>
-			  <input  id="userName" name="username" type="text" value="<%= userdata.username %>"></input>
+				<label for="userName">Username: </label>
+				<input  class="text-input" id="userName" name="username" type="text" value="<%= userdata.username %>"></input>
 			</div>
-	  
+			
 			<div>
-			  <label for="password">Password: </label>
-			  <input  id="password" name="password" type="text" value="<%= userdata.password %>"></input>
+				<label for="password">Password: </label>
+				<input class="text-input" id="password" name="password" type="text" value="<%= userdata.password %>"></input>
 			</div>
 			<div>
-			  <label for="password">Email: </label>
-			  <input  id="password" name="email" type="text" value="<%= userdata.email %>"></input>
+				<label for="password">Email: </label>
+				<input class="text-input" id="password" name="email" type="text" value="<%= userdata.email %>"></input>
 			</div>
-			<button  type="submit">Update</button>
-		  </form>
+			<button  class="text-input"  type="submit">Update</button>
+		</form>
+		<form action="/member/<%= userdata.id %>?_method=DELETE" method="POST">
+			<button class="text-input"  type="submit">Delete Profile</button>
+		</form>
 	</body>
 </html>

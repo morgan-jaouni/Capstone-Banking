@@ -13,6 +13,29 @@ router.get('/', (req, res) => {
 router.get('/member/home', (req, res) => {
     res.render('indexmember');
 })
+//Member Transfer Route
+router.get('/member/transfer', (req, res) => {
+    User.find({}, (err, allUsers) => {
+        if (err) return console.log(err);
+        if(req.cookies.logged){
+            const userid = req.cookies.logged;
+            const query = User.findOne({ '_id' : userid });
+            query.select('name username email money create_date');
+            query.exec((err, user) => {
+                if (err) return console.log(err);
+                const context = {
+                    users: allUsers,
+                    userdata: user
+                }
+                console.log(context)
+              res.render('transfer', context);
+            });
+          } else {
+            res.redirect('/login');
+          }
+    })
+    });
+
 
 
 //Member Edit Route
