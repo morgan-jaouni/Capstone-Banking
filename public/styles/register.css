@@ -10,6 +10,7 @@ form {
 nav a {
     color: black;
     letter-spacing: 5px;
+    font-weight: 700;
 }
 h1 {
   display: inline-block;
@@ -44,10 +45,10 @@ nav {
 input.placeholder {
     text-align: center;
   }
-  ::placeholder {
+::placeholder {
   color: lime;
   }
-  .signup {
+.signup {
       color: black;
   }
 
