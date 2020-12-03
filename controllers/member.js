@@ -1,8 +1,10 @@
 const express = require('express');
 const router = express.Router();
 const User = require('../models/User');
+const Tran = require('../models/Tran');
 const mongoose = require('mongoose');
 let userdata;
+let trandata;
 
 //Member Page
 router.get('/',(req, res, next) => {
@@ -10,9 +12,10 @@ router.get('/',(req, res, next) => {
     const userid = req.cookies.logged;
     const query = User.findOne({ '_id' : userid });
     query.select('name username email money create_date');
+    Tran.find( {$or :[ {sender: userid}, {receiver: userid}] })
     query.exec((err, user) => {
     if (err) return console.log(err);
-    
+   
       res.render('member', { userdata: user});
     });
   } else {

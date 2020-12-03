@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Tran = require('../models/Tran');
+const User = require('../models/User');
 
 
 
@@ -11,21 +12,35 @@ router.get('/', (req, res)=>{
 
 
 router.post('/:sender', (req,res) => {
+	
 	const send = {
 		sender : req.params.sender,
 		receiver : req.body.receiver, 
 		amount : parseInt(req.body.amount)
 		}
-
 	Tran.create(send, (err, newTran) => {
 		if (err) return console.log(err);
-		res.redirect('/member')
-
 
 		//find sender
+		User.findById(req.params.sender, (err, foundUser)=>{
+			const updateSenderBalance = foundUser.money - req.body.amount
+
 		//update sender
-		//save sender	
-		
+		User.findByIdAndUpdate(req.params.sender, { $set: {money : updateSenderBalance}}, (err, foundUser)=>{
+			
+		//find receiver
+		User.findById(req.body.receiver, (err, foundUser)=>{	
+			const updateReceiverBalance = foundUser.money + parseInt(req.body.amount)	
+
+		//update receiver
+		User.findByIdAndUpdate(req.body.receiver, { $set: {money : updateReceiverBalance}}, (err, foundUser)=>{
+			
+		res.redirect('/member')
+
+		})
+		})
+		})
+	 })
 	})
 })
 
