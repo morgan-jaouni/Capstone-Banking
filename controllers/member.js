@@ -7,17 +7,23 @@ let userdata;
 let trandata;
 
 //Member Page
-router.get('/',(req, res, next) => {
+router.get('/',(req, res) => {
   if(req.cookies.logged){
     const userid = req.cookies.logged;
     const query = User.findOne({ '_id' : userid });
+    const query2 = Tran.find({sender: userid})
     query.select('name username email money create_date');
-    Tran.find( {$or :[ {sender: userid}, {receiver: userid}] })
+    query2.select('sender receiver amount');
+    query2.populate('receiver', 'username')
     query.exec((err, user) => {
-    if (err) return console.log(err);
-   
-      res.render('member', { userdata: user});
+      if (err) return console.log(err);
+      query2.exec((err,tran) => {
+        if (err) return console.log(err);
+       
+          res.render('member',{trans : tran, userdata: user });
+        });
     });
+    
   } else {
     res.redirect('/login');
   }

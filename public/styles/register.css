@@ -1,0 +1,65 @@
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 20vh;
+ 
+  }
+nav a {
+    color: black;
+    letter-spacing: 5px;
+}
+h1 {
+  display: inline-block;
+}
+nav {
+    height: 10vh;
+    width: 80vw;
+    background-image: linear-gradient(to right, black , lime 50%);
+    float: right;
+}
+  input {
+      margin-bottom: 20px;
+      border-radius: 20px;
+      text-align: center;
+      color: lime;
+  }
+  div {
+
+      background-color: lime;
+      height: 60%;
+      width: 40%;
+      border-radius: 20px;
+      display: flex;
+      position: absolute;
+      top:0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+      display: block;
+  }
+input.placeholder {
+    text-align: center;
+  }
+  ::placeholder {
+  color: lime;
+  }
+  .signup {
+      color: black;
+  }
+
+button {
+    border-radius: 20px;
+    width: 100px;
+}
+footer {
+  position: absolute;
+  bottom: 0;
+}
+
+#icon {
+  color: black;;
+}

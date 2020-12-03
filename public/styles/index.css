@@ -1,0 +1,9 @@
+
+
+
+nav {
+    height: 10vh;
+    width: 80vw;
+    background-image: linear-gradient(to right, black , lime 50%);
+    float: right;
+}
