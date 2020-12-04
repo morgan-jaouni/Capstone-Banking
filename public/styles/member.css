@@ -1,16 +1,84 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  @font-face {
-    font-family: Clip;
-    src: url("https://acupoftee.github.io/fonts/Clip.ttf");
-  }
 
-  body {
-      background-color: white;
-
+body {
+    background-color: black;
     color: lime;
   }
+
+nav {
+    height: 10vh;
+    width: 80vw;
+    background-image: linear-gradient(to right, black , lime 50%);
+    float: right;
+}
+nav a {
+  color: black;
+  letter-spacing: 5px;
+  font-weight: 700;
+}
+
+h1 {
+  display: inline-block;
+}
+h2 {
+  font-size: 40px;
+  display: inline-block;
+}
+h3 {
+  text-align: center;
+  font-size: 35px;
+  left:35%;
+}
+h4 {
+  display: block;
+  font-size: 35px;
+  
+}
+.received {
+  display: inline-block;
+  overflow:auto;
+  height: 200px;
+  width: 38%;
+  background: lime;
+  color:black;
+  border: none;
+  text-align: center;
+}
+
+
+input {
+  border-radius: 20px;
+  height: 40px;
+
+}
+
+.history {
+  position: absolute;
+  top:60%;
+  left:35%;
+  width:60%;
+}
+
+.balance {
+  position: absolute;
+  top:20%;
+  left:40%;
+  display: inline-block;
+  height: 200px;
+}
+
+::placeholder {
+  color: lime;
+  text-align: center;
+}
+
+#checkingDeposit {
+  width: 100px;
+}
+#checkingWithdraw {
+  width: 100px;
+}
+
+.senderlist {
+  font-size: 18px;
+}
+

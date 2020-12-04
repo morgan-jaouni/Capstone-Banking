@@ -5,7 +5,6 @@ form {
   align-items: center;
   text-align: center;
   min-height: 20vh;
- 
   }
 nav a {
     color: black;
@@ -26,6 +25,7 @@ nav {
       border-radius: 20px;
       text-align: center;
       color: lime;
+      outline: lime;
   }
   div {
 
@@ -62,5 +62,5 @@ footer {
 }
 
 #icon {
-  color: black;;
+  color: black;
 }

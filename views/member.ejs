@@ -14,46 +14,51 @@
 	</head>
 	<body>
 		<header>
+			<i class="fas fa-hand-holding-usd fa-3x ml-3 mt-3"></i>
 			<h1>Current</h1>
 			<nav>
-				<ul>
-					<li>
-						<a href="/member/home">Home</a>
+				<ul class="nav justify-content-end">
+					<li class="nav-item">
+						<a class="nav-link mt-3 ml-5 mr-5" href="/member/home">Home</a>
+					</li class="nav-item">
+					<li class="nav-item">
+						<a class="nav-link mt-3 ml-5 mr-5" href="/member/transfer">Transfer</a>
 					</li>
-					<li>
-						<a href="/member/transfer">Transfer</a>
+					<li class="nav-item">
+						<a class="nav-link mt-3 ml-5 mr-5" href="/member/edit"type="button"><%= userdata.username %></a>
 					</li>
-					<li>
-						<a href="/member/logout"type="button">Logout</a>
-					</li>
-					<li>
-						<a href="/member/edit"type="button">Account</a>
+					<li class="nav-item">
+						<a class="nav-link mt-3 ml-5 mr-5" href="/member/logout"type="button">Logout</a>
 					</li>
 				</ul>
 			</nav>
         </header>
 		
-		<h3> <%= userdata.username %> </h3>
-		
 		
 		<div id="checkingBalance" class="balance">
-		<h2>Available Balance: <%= userdata.money %> </h2>
+			<h2 class="current mb-3">Current Balance</h2>
+			<h3 class="mb-2">$<%= userdata.money %> </h3>
+			
+			<form  action='/member/<%= userdata._id %>/withdraw?_method=PUT' method='POST'>
+				<input class="text-input mt-5 mb-3" id="checkingInput" name="withdraw" class="input" type="text" placeholder="enter an amount" />
+				<input id="checkingWithdraw" class="text-input ml-3" type="submit" value="Withdraw" />
+			</form>
+			<form action='/member/<%= userdata._id %>/deposit?_method=PUT' method='POST'>
+				<input class="text-input mt-4" id="checkingInput" name="deposit" class="input" type="text" placeholder="enter an amount" />
+				<input class="text-input ml-3" id="checkingDeposit"  type="submit" value="Deposit" />
+			</form>
 		</div>
-		<form action='/member/<%= userdata._id %>/withdraw?_method=PUT' method='POST'>
-			<input class="text-input" id="checkingInput" name="withdraw" class="input" type="text" placeholder="enter an amount" />
-			<input id="checkingWithdraw" class="text-input" type="submit" value="Withdraw" />
-		</form>
-		<form action='/member/<%= userdata._id %>/deposit?_method=PUT' method='POST'>
-			<input class="text-input" id="checkingInput" name="deposit" class="input" type="text" placeholder="enter an amount" />
-			<input class="text-input" id="checkingDeposit" class="deposit" type="submit" value="Deposit" />
-		</form>
-	  </div>
 
-	  <h3>Transaction History</h3>
+
+	  <div class="history">
+	  <h4 class="ml-5 mb-4">Transaction History</h4>
+	  <div class="received ml-5">
 	  <ul>
 		<% for(let i = 0; i < trans.length; i++) { %> 
-			<li value="<%= trans[i]._id %>"><%= trans[i].receiver.username %> <%= trans[i].amount %> </li>
+			<li class="senderlist"value="<%= trans[i]._id %>">#<%= trans[i].sender.username %> sent $<%= trans[i].amount %> to #<%= trans[i].receiver.username %>  </li>
 			<% } %>
 		</ul>
+	</div>
+	</div>
 	</body>
 </html>

@@ -15,6 +15,7 @@ router.get('/',(req, res) => {
     query.select('name username email money create_date');
     query2.select('sender receiver amount');
     query2.populate('receiver', 'username')
+    query2.populate('sender', 'username')
     query.exec((err, user) => {
       if (err) return console.log(err);
       query2.exec((err,tran) => {
