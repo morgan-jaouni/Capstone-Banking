@@ -41,30 +41,30 @@
 		</div>
 
 		<div class="edit">
-		<h2>Edit Profile</h2>
+		<h2 class="ml-5 mb-3">Edit Profile</h2>
 		<form action="/member/<%= userdata.id %>/edit?_method=PUT" method="POST">
 			<div>
-				<label for="name">Name: </label>
+				<label class="mb-3"for="name">Name: </label>
 				<input  class="text-input" id="name" name="name" type="text" value="<%= userdata.name %>"></input>
 			</div>
 			
 			<div>
-				<label for="userName">Username: </label>
+				<label class="mb-3" for="userName">Username: </label>
 				<input  class="text-input" id="userName" name="username" type="text" value="<%= userdata.username %>"></input>
 			</div>
 			
 			<div>
-				<label for="password">Password: </label>
+				<label class="mb-3" for="password">Password: </label>
 				<input class="text-input" id="password" name="password" type="text" value="<%= userdata.password %>"></input>
 			</div>
 			<div>
-				<label for="password">Email: </label>
+				<label class="mb-3" for="password">Email: </label>
 				<input class="text-input" id="password" name="email" type="text" value="<%= userdata.email %>"></input>
 			</div>
-			<button  class="text-input"  type="submit">Update</button>
+			<button  id="update" class="text-input mb-3  ml-5"  type="submit">Update</button>
 		</form>
 		<form action="/member/<%= userdata.id %>?_method=DELETE" method="POST">
-			<button class="text-input"  type="submit">Delete Profile</button>
+			<button id="delete" class="text-input ml-5"  type="submit">Delete Profile</button>
 		</form>
 	</div>
 	</body>

@@ -37,7 +37,7 @@
 		
 		<div id="checkingBalance" class="balance">
 			<h2 class="current mb-3">Current Balance</h2>
-			<h3 class="mb-2">$<%= userdata.money %> </h3>
+			<h3 class="mb-2 mr-3">$<%= userdata.money %> </h3>
 			
 			<form  action='/member/<%= userdata._id %>/withdraw?_method=PUT' method='POST'>
 				<input class="text-input mt-5 mb-3" id="checkingInput" name="withdraw" class="input" type="text" placeholder="enter an amount" />
