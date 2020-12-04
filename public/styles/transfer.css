@@ -14,3 +14,50 @@ nav a {
   h1 {
     display: inline-block;
   }
+
+  h2 {
+    position: absolute;
+    font-size: 50px;
+    left: 41%;
+    top:18%
+  }
+
+  h3 {
+      font-size: 45px;
+  }
+
+  h4 {
+      font-size: 33px;
+  }
+  #logo {
+    position: absolute;
+    left: 44%;
+    top:28%
+  }
+
+  div {
+      position: absolute;
+      top:45%;
+      left: 40%;
+  }
+
+  input {
+      border-radius: 20px;
+      text-align: center;
+      height:50px;
+      outline: none;
+  }
+
+  ::placeholder {
+      color: lime;
+  }
+
+  #sendto {
+      width: 100px;
+  }
+
+  select {
+      background-color: black;
+      color: lime;
+      outline: lime;
+  }

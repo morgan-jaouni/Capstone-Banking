@@ -1,16 +1,37 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  @font-face {
-    font-family: Clip;
-    src: url("https://acupoftee.github.io/fonts/Clip.ttf");
-  }
+nav {
+  height: 10vh;
+  width: 80vw;
+  background-image: linear-gradient(to right, black , lime 50%);
+  float: right;
+}
+
+nav a {
+  color: black;
+  letter-spacing: 5px;
+  font-weight: 700;
+}
 
   body {
-      background-color: black;
-
+    background-color: black;
     color: lime;
+  }
+
+  .profile {
+    position: absolute;
+    top:20%;
+    left:40%
+  }
+
+  .edit {
+    position: absolute;
+    top:50%;
+    left:40%
+  }
+
+  input {
+    border-radius: 20px;
+  }
+
+  h1 {
+    display: inline-block;
   }

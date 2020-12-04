@@ -14,28 +14,33 @@
 	</head>
 	<body>
 		<header>
+			<i class="fas fa-hand-holding-usd fa-3x ml-3 mt-3"></i>
 			<h1>Current</h1>
 			<nav>
-				<ul>
-					<li>
-						<a href="/member/home">Home</a>
+				<ul class="nav justify-content-end">
+					<li class="nav-item">
+						<a class="nav-link mt-3 ml-5 mr-5" href="/member/home">Home</a>
 					</li>
-					<li>
-						<a href="/member">Account</a>
+					<li class="nav-item"> 
+						<a class="nav-link mt-3 ml-5 mr-5" href="/member">Account</a>
 					</li>
-				
-					<li>
-						<a href="/member/logout"type="button">Logout</a>
+					<li class="nav-item">
+						<a class="nav-link mt-3 ml-5 mr-5" href="/member/transfer">Transfer</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link mt-3 ml-5 mr-5" href="/member/logout"type="button">Logout</a>
 					</li>
 				</ul>
 			</nav>
 		</header>
-		
+		<div class="profile">
 		<h1>Profile Information</h1>
 		<p>Name: <%= userdata.name %> </p>
 		<p>Username: <%= userdata.username %> </p>
 		<p>Email: <%= userdata.email %> </p>
+		</div>
 
+		<div class="edit">
 		<h2>Edit Profile</h2>
 		<form action="/member/<%= userdata.id %>/edit?_method=PUT" method="POST">
 			<div>
@@ -61,5 +66,6 @@
 		<form action="/member/<%= userdata.id %>?_method=DELETE" method="POST">
 			<button class="text-input"  type="submit">Delete Profile</button>
 		</form>
+	</div>
 	</body>
 </html>

@@ -1,7 +1,9 @@
 .text-input {
-    background-color: rgba(0, 0, 0, .5);
+    background-color: black;
     color: lime;
     text-align: center;
+    border-radius: 20px;
+    outline: none;
 }
 
 
@@ -15,11 +17,7 @@ nav {
 h1 {
     display: inline-block;
   }
-.text-input {
-    background-color: black;
-    border-radius: 20px;
-    outline: none;
-}
+
 
  .login {
     background-color: lime;
