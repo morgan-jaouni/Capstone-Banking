@@ -7,7 +7,7 @@ const User = require('../models/User');
 
 
 router.get('/', (req, res)=>{
-	res.render('transfer.ejs');
+	res.render('transfer');
 });
 
 

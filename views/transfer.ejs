@@ -16,19 +16,21 @@
 		<header>
 			<h1>Current</h1>
 			<nav>
-				<ul>
-					<li>
-						<a href="/">Home</a>
+				<ul class="nav justify-content-end">
+					<li class="nav-item">
+						<a class="nav-link mt-3 ml-5 mr-5" href="/member/home">Home</a>
 					</li>
-					<li>
-						<a href="/member">Account</a>
+					<li  class="nav-item">
+						<a class="nav-link mt-3 ml-5 mr-5" href="/member"><%= userdata.username %></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link mt-3 ml-5 mr-5" href="/member/logout"type="button">Logout</a>
 					</li>
 				</ul>
 			</nav>
         </header>
         
-        <h1>Send</h1>
-		<h3> <%= userdata.username %> </h3>
+        <h2>Send</h2>
 		<h3> Available Balance: <%= userdata.money %> </h3>
 
 
