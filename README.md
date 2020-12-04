@@ -1,4 +1,4 @@
-# CashStash
+# Current
 
 Banking app using Node.js, Express, Mongoose, MongoDB
 
