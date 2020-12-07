@@ -18,4 +18,9 @@
       background-color: black;
       color: lime;
   }
+
+  nav a:hover {
+    border-bottom: 3px solid;
+    color: black;
+  }
  
