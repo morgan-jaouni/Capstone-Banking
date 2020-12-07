@@ -8,6 +8,7 @@ const mongoose = require('mongoose');
 const methodOverride = require('method-override');
 const cookieParser = require('cookie-parser');
 const redirect = require('express-redirect');
+require('dotenv').config();
 const PORT = process.env.PORT || 3000;
 redirect(app);
 
