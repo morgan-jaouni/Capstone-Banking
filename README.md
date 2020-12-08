@@ -19,6 +19,7 @@ Heroku Deployment: https://rocky-anchorage-99030.herokuapp.com/
 * mobilization and improved screen width responsiveness
 * data validation for the user
 * User prompts after deposit,withdraw,transfer
+* major error handling
 
 ### Wireframe
 
