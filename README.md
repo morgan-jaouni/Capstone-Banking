@@ -18,7 +18,7 @@ Heroku Deployment: https://rocky-anchorage-99030.herokuapp.com/
 ### v2 in progress...
 * mobilization and improved screen width responsiveness
 * data validation for the user
-* User prompts "Are you sure?" after deposit,withdraw,transfer
+* User prompts after deposit,withdraw,transfer
 
 ### Wireframe
 
