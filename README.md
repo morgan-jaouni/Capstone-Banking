@@ -1,6 +1,7 @@
 # Current
 
 
+(VERSION 1) 
 Banking app using Node.js, Express, Mongoose, MongoDB
 
 Heroku Deployment: https://rocky-anchorage-99030.herokuapp.com/
@@ -13,6 +14,11 @@ Heroku Deployment: https://rocky-anchorage-99030.herokuapp.com/
 * User can deposit/withdraw
 * User can transfer money to other users
 * User can view transaction history
+
+### v2 in progress...
+* mobilization and improved screen width responsiveness
+* data validation for the user
+* User prompts "Are you sure?" after deposit,withdraw,transfer
 
 ### Wireframe
 
