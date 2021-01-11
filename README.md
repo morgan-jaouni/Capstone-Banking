@@ -21,6 +21,13 @@ Heroku Deployment: https://rocky-anchorage-99030.herokuapp.com/
 * User prompts after deposit,withdraw,transfer
 * major error handling
 
+## DEMO:
+* Sign-up and create two users
+* Send money from one user to the other
+* View transaction history
+* Log into second user and view new balance
+
+
 ### Wireframe
 
 ![Screen Shot 2020-11-20 at 10 23 43 PM](https://user-images.githubusercontent.com/73499055/99867865-16503f00-2b83-11eb-9182-e4b8e55fbcd2.png)
