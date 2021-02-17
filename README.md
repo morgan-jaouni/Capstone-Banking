@@ -6,7 +6,7 @@ Banking app using Node.js, Express, Mongoose, MongoDB
 
 Heroku Deployment: https://rocky-anchorage-99030.herokuapp.com/
 
-### User Stories:
+### User-Stories:
 
 * User can sign-up/login
 * Authentication/Authorization
