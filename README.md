@@ -8,7 +8,7 @@ Heroku Deployment: https://rocky-anchorage-99030.herokuapp.com/
 
 ### User-Stories:
 
-* User can sign-up/login
+* User can signup/login
 * Authentication/Authorization
 * User can open a checking or savings account, begin with $10,000
 * User can deposit/withdraw
